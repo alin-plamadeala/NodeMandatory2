@@ -2,15 +2,24 @@
 
 A simple project that demonstrates user accounts, authorizing pages, and nodemailer for password reset.
 
-## Pages
+## Demo
 
-* ```/``` - index page, only authorized access 
-* ```/login``` - login page
-* ```/logout``` - logout page
-* ```/register``` - registration page
-* ```/forgotPassword``` - request password reset page
-* ```/confirmResetPassword``` - reset password page
-* ```/users``` - index page, only admin accounts access 
+There is an administrator account for demonstration purpose:
+
+- Username: `admin`
+- Password: `administrator`
 
 ## Configuration
-Fill in the fields from ```.env.template``` file and rename it to ```.env```
+
+To run this application you need to have a PostgreSQL database.
+Fill in the fields from `.env.template` file and rename it to `.env`
+
+## Pages
+
+- `/` - index page, only authorized access
+- `/login` - login page
+- `/logout` - logout page
+- `/register` - registration page
+- `/forgotPassword` - request password reset page
+- `/confirmResetPassword` - reset password page
+- `/users` - index page, only admin accounts access

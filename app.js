@@ -9,6 +9,7 @@ const Sequelize = require("sequelize");
 const User = require("./models/UserModel");
 const bcrypt = require("bcrypt");
 
+//importing .env
 require("dotenv").config();
 
 //Setting up handlebars as the template engine
@@ -24,10 +25,23 @@ app.engine(
 
 app.set("view engine", "hbs");
 
+//setting bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
+//setting cookieParser
 app.use(cookieParser());
+//serving static public folder
 app.use(express.static("public"));
 
+const rateLimit = require("express-rate-limit");
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
+
+app.use(limiter);
+
+//authorization middleware
 app.use(async (req, res, next) => {
   if (req.cookies["Authorization"]) {
     try {
@@ -56,6 +70,9 @@ app.use(async (req, res, next) => {
 
 //database
 const db = require("./config/database");
+db.authenticate()
+  .then(() => console.log("Database connected..."))
+  .catch((err) => console.log(err));
 
 //create table if not exists
 User.sync();
@@ -75,6 +92,7 @@ adminAccount = async () => {
 };
 adminAccount();
 
+//routes
 const routes = require("./routes/route");
 app.use("/", routes);
 
