@@ -1,0 +1,75 @@
+<div class="reg-container">
+    {{#if confirm}}
+    <div class="alert alert-success" role="alert">
+        Your account has been succesfuly created! You can now <a href="/login">log in</a>.
+    </div>
+    {{else}}
+    <h1>Register a new account</h1>
+
+    <form id="registerUser" class=" needs-validation mt-4" method="POST" enctype="application/x-www-form-urlencoded">
+
+        <div class="form-group">
+            <label for="name"><strong>Name</strong></label>
+            <input type="text" name="name" class="form-control" id="name" value="{{data.name}}" required>
+            {{#if pageErrors.name}}
+            <script>
+                $("#name").addClass("is-invalid");
+            </script>
+            <div class="invalid-feedback">
+                {{pageErrors.name}}
+            </div>
+            {{/if}}
+        </div>
+        <div class="form-group">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" name="email" class="form-control" id="email" value="{{data.email}}" required>
+            {{#if pageErrors.email}}
+            <script>
+                $(" #email").addClass("is-invalid"); </script>
+            <div class="invalid-feedback">
+                {{pageErrors.email}}
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="form-group">
+            <label for="username"><strong>Username</strong></label>
+            <input type="text" name="username" class="form-control" id="username" value="{{data.username}}" required>
+            {{#if pageErrors.username}}
+            <script>
+                $(" #username").addClass("is-invalid"); </script>
+            <div class="invalid-feedback">
+                {{pageErrors.username}}
+            </div>
+            {{/if}}
+        </div>
+        <div class="form-group">
+            <label for="password"><strong>Password</strong></label>
+            <input type="password" name="password" class="form-control" id="password" required>
+            {{#if pageErrors.password}}
+            <script>
+                $("#password").addClass("is-invalid");
+            </script>
+            <div class="invalid-feedback">
+                {{pageErrors.password}}
+            </div>
+            {{/if}}
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword"><strong>Confirm Password</strong></label>
+            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required>
+            {{#if pageErrors.confirmPassword}}
+            <script>
+                $("#confirmPassword").addClass("is-invalid");
+            </script>
+            <div class="invalid-feedback">
+                {{pageErrors.confirmPassword}}
+            </div>
+            {{/if}}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+
+    {{/if}}
+</div>

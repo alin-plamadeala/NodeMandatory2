@@ -1,0 +1,49 @@
+body {
+  background-color: #a6a7a8;
+}
+.footer {
+  color: #ffffff;
+  position: absolute;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.loginBox {
+  margin: 5em auto;
+  padding: 20px 50px;
+  color: #333;
+  box-sizing: border-box;
+  max-width: 400px;
+  min-height: 50vh;
+  background-color: #fff;
+  background-repeat: repeat-y;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33);
+  background-clip: border-box;
+  border: 1px solid #fff;
+}
+.reg-container {
+  margin: 5em auto;
+  padding: 20px 50px;
+  color: #333;
+  box-sizing: border-box;
+  max-width: 600px;
+  height: 80vh;
+  background-color: #fff;
+  background-repeat: repeat-y;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33);
+  background-clip: border-box;
+  border: 1px solid #fff;
+}
+
+.loginForm {
+  max-width: 400px;
+  text-align: center;
+  margin: 2em auto;
+  float: none;
+}
+.form-group {
+  margin-bottom: 0.5rem;
+}

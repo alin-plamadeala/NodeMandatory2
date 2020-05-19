@@ -1,0 +1,35 @@
+<div class="loginBox">
+    <h1>Login</h1>
+
+    <div class="loginForm">
+        <form action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <input type="username" class="form-control form-control-lg" id="username" name="username"
+                    placeholder="Username">
+                {{#if pageErrors.username}}
+                <script>
+                    $("#username").addClass("is-invalid");
+                </script>
+                <div class="invalid-feedback">
+                    {{pageErrors.username}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control form-control-lg" id="password" name="password"
+                    placeholder="Password">
+                {{#if pageErrors.password}}
+                <script>
+                    $("#password").addClass("is-invalid");
+                </script>
+                <div class="invalid-feedback">
+                    {{pageErrors.password}}
+                </div>
+                {{/if}}
+            </div>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+            <p class="m-1"><a href="/forgotPassword">Forgot Password?</a></p>
+            <p><a href="/register">Dont have an account?</a></p>
+        </form>
+    </div>
+</div>
